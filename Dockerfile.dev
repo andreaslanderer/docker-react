@@ -1,0 +1,12 @@
+FROM node:alpine
+
+WORKDIR '/app'
+
+COPY package.json .
+
+RUN npm install
+
+# when mapping volumes back to our workspace directory, this copy is optional
+COPY . .
+
+CMD ["npm", "run", "start"]
