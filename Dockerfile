@@ -9,7 +9,7 @@ RUN ["npm", "run", "build"]
 
 # the second FROM statement finishes the phase and starts the second one
 FROM nginx
-
+EXPOSE 80
 COPY --from=builder /app/build /usr/share/nginx/html
 # base image already takes care of starting nginx server for us
 
